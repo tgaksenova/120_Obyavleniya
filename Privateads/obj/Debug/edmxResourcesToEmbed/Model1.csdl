@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADSPR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="дата_публикации" Type="DateTime" Precision="0" />
+    <Property Name="id_продавца" Type="Int32" />
+    <Property Name="id_категории" Type="Int32" />
+    <Property Name="название_объявления" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="стоимость_товара" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="состояние_товара" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="способ_оплаты" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="способ_доставки" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Категории" Relationship="Self.FK_Объявления_Категории" FromRole="ADSPR" ToRole="Категории" />
+    <NavigationProperty Name="Продавцы" Relationship="Self.FK_Объявления_Продавцы" FromRole="ADSPR" ToRole="Продавцы" />
+  </EntityType>
+  <EntityType Name="RegisterUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Категории">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="категория" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="подкатегория" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADSPR" Relationship="Self.FK_Объявления_Категории" FromRole="Категории" ToRole="ADSPR" />
+  </EntityType>
+  <EntityType Name="Продавцы">
+    <Key>
+      <PropertyRef Name="id_продавца" />
+    </Key>
+    <Property Name="id_продавца" Type="Int32" Nullable="false" />
+    <Property Name="регион" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ФИО" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="телефон" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="e_mail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="адрес_осмотра" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADSPR" Relationship="Self.FK_Объявления_Продавцы" FromRole="Продавцы" ToRole="ADSPR" />
+  </EntityType>
+  <Association Name="FK_Объявления_Категории">
+    <End Role="Категории" Type="Self.Категории" Multiplicity="0..1" />
+    <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Категории">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ADSPR">
+        <PropertyRef Name="id_категории" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Объявления_Продавцы">
+    <End Role="Продавцы" Type="Self.Продавцы" Multiplicity="0..1" />
+    <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Продавцы">
+        <PropertyRef Name="id_продавца" />
+      </Principal>
+      <Dependent Role="ADSPR">
+        <PropertyRef Name="id_продавца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ADSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADSPR" EntityType="Self.ADSPR" />
+    <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Категории" EntityType="Self.Категории" />
+    <EntitySet Name="Продавцы" EntityType="Self.Продавцы" />
+    <AssociationSet Name="FK_Объявления_Категории" Association="Self.FK_Объявления_Категории">
+      <End Role="Категории" EntitySet="Категории" />
+      <End Role="ADSPR" EntitySet="ADSPR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Объявления_Продавцы" Association="Self.FK_Объявления_Продавцы">
+      <End Role="Продавцы" EntitySet="Продавцы" />
+      <End Role="ADSPR" EntitySet="ADSPR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

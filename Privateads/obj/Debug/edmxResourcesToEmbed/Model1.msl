@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ADSModelContainer" CdmEntityContainer="ADSEntities">
+    <EntitySetMapping Name="ADSPR">
+      <EntityTypeMapping TypeName="ADSModel.ADSPR">
+        <MappingFragment StoreEntitySet="ADSPR">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="дата_публикации" ColumnName="дата_публикации" />
+          <ScalarProperty Name="id_продавца" ColumnName="id_продавца" />
+          <ScalarProperty Name="id_категории" ColumnName="id_категории" />
+          <ScalarProperty Name="название_объявления" ColumnName="название_объявления" />
+          <ScalarProperty Name="стоимость_товара" ColumnName="стоимость_товара" />
+          <ScalarProperty Name="состояние_товара" ColumnName="состояние_товара" />
+          <ScalarProperty Name="описание" ColumnName="описание" />
+          <ScalarProperty Name="способ_оплаты" ColumnName="способ_оплаты" />
+          <ScalarProperty Name="способ_доставки" ColumnName="способ_доставки" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisterUser">
+      <EntityTypeMapping TypeName="ADSModel.RegisterUser">
+        <MappingFragment StoreEntitySet="RegisterUser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ADSModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Категории">
+      <EntityTypeMapping TypeName="ADSModel.Категории">
+        <MappingFragment StoreEntitySet="Категории">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="категория" ColumnName="категория" />
+          <ScalarProperty Name="подкатегория" ColumnName="подкатегория" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Продавцы">
+      <EntityTypeMapping TypeName="ADSModel.Продавцы">
+        <MappingFragment StoreEntitySet="Продавцы">
+          <ScalarProperty Name="id_продавца" ColumnName="id_продавца" />
+          <ScalarProperty Name="регион" ColumnName="регион" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+          <ScalarProperty Name="адрес_осмотра" ColumnName="адрес_осмотра" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ADSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADSPR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="дата_публикации" Type="date" />
+    <Property Name="id_продавца" Type="int" />
+    <Property Name="id_категории" Type="int" />
+    <Property Name="название_объявления" Type="nvarchar" MaxLength="255" />
+    <Property Name="стоимость_товара" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="состояние_товара" Type="nvarchar" MaxLength="50" />
+    <Property Name="описание" Type="nvarchar(max)" />
+    <Property Name="способ_оплаты" Type="nvarchar" MaxLength="255" />
+    <Property Name="способ_доставки" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RegisterUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="15" />
+    <Property Name="password" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Категории">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="категория" Type="nvarchar" MaxLength="255" />
+    <Property Name="подкатегория" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Продавцы">
+    <Key>
+      <PropertyRef Name="id_продавца" />
+    </Key>
+    <Property Name="id_продавца" Type="int" Nullable="false" />
+    <Property Name="регион" Type="nvarchar" MaxLength="255" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="255" />
+    <Property Name="телефон" Type="nvarchar" MaxLength="15" />
+    <Property Name="e_mail" Type="nvarchar" MaxLength="255" />
+    <Property Name="адрес_осмотра" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Объявления_Категории">
+    <End Role="Категории" Type="Self.Категории" Multiplicity="0..1" />
+    <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Категории">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ADSPR">
+        <PropertyRef Name="id_категории" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Объявления_Продавцы">
+    <End Role="Продавцы" Type="Self.Продавцы" Multiplicity="0..1" />
+    <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Продавцы">
+        <PropertyRef Name="id_продавца" />
+      </Principal>
+      <Dependent Role="ADSPR">
+        <PropertyRef Name="id_продавца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ADSModelContainer">
+    <EntitySet Name="ADSPR" EntityType="Self.ADSPR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Категории" EntityType="Self.Категории" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Продавцы" EntityType="Self.Продавцы" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Объявления_Категории" Association="Self.FK_Объявления_Категории">
+      <End Role="Категории" EntitySet="Категории" />
+      <End Role="ADSPR" EntitySet="ADSPR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Объявления_Продавцы" Association="Self.FK_Объявления_Продавцы">
+      <End Role="Продавцы" EntitySet="Продавцы" />
+      <End Role="ADSPR" EntitySet="ADSPR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

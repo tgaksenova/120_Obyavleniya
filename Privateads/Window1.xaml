@@ -1,0 +1,18 @@
+﻿<Window x:Class="Privateads.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Privateads"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click"/>
+        <Button Content="Есть страница? Авторизуйся!" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Width="220" Click="Button_Click_1"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="242,156,0,0" VerticalAlignment="Top" Width="61" Height="38" FontSize="16"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="242,213,0,0" VerticalAlignment="Top" Width="74" Height="38" FontSize="16"/>
+        <Label Content="Регистрация" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="390,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_2" BorderBrush="#FFA5239A"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="390,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_3"/>
+    </Grid>
+</Window>

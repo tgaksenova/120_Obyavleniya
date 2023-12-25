@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ADSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADSPR">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="дата_публикации" Type="date" />
+          <Property Name="id_продавца" Type="int" />
+          <Property Name="id_категории" Type="int" />
+          <Property Name="название_объявления" Type="nvarchar" MaxLength="255" />
+          <Property Name="стоимость_товара" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="состояние_товара" Type="nvarchar" MaxLength="50" />
+          <Property Name="описание" Type="nvarchar(max)" />
+          <Property Name="способ_оплаты" Type="nvarchar" MaxLength="255" />
+          <Property Name="способ_доставки" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="RegisterUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="nvarchar" MaxLength="15" />
+          <Property Name="password" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Категории">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="категория" Type="nvarchar" MaxLength="255" />
+          <Property Name="подкатегория" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Продавцы">
+          <Key>
+            <PropertyRef Name="id_продавца" />
+          </Key>
+          <Property Name="id_продавца" Type="int" Nullable="false" />
+          <Property Name="регион" Type="nvarchar" MaxLength="255" />
+          <Property Name="ФИО" Type="nvarchar" MaxLength="255" />
+          <Property Name="телефон" Type="nvarchar" MaxLength="15" />
+          <Property Name="e_mail" Type="nvarchar" MaxLength="255" />
+          <Property Name="адрес_осмотра" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_Объявления_Категории">
+          <End Role="Категории" Type="Self.Категории" Multiplicity="0..1" />
+          <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категории">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ADSPR">
+              <PropertyRef Name="id_категории" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Объявления_Продавцы">
+          <End Role="Продавцы" Type="Self.Продавцы" Multiplicity="0..1" />
+          <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Продавцы">
+              <PropertyRef Name="id_продавца" />
+            </Principal>
+            <Dependent Role="ADSPR">
+              <PropertyRef Name="id_продавца" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ADSModelContainer">
+          <EntitySet Name="ADSPR" EntityType="Self.ADSPR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Категории" EntityType="Self.Категории" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Продавцы" EntityType="Self.Продавцы" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Объявления_Категории" Association="Self.FK_Объявления_Категории">
+            <End Role="Категории" EntitySet="Категории" />
+            <End Role="ADSPR" EntitySet="ADSPR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Объявления_Продавцы" Association="Self.FK_Объявления_Продавцы">
+            <End Role="Продавцы" EntitySet="Продавцы" />
+            <End Role="ADSPR" EntitySet="ADSPR" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ADSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADSPR">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="дата_публикации" Type="DateTime" Precision="0" />
+          <Property Name="id_продавца" Type="Int32" />
+          <Property Name="id_категории" Type="Int32" />
+          <Property Name="название_объявления" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="стоимость_товара" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="состояние_товара" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="способ_оплаты" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="способ_доставки" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Категории" Relationship="Self.FK_Объявления_Категории" FromRole="ADSPR" ToRole="Категории" />
+          <NavigationProperty Name="Продавцы" Relationship="Self.FK_Объявления_Продавцы" FromRole="ADSPR" ToRole="Продавцы" />
+        </EntityType>
+        <EntityType Name="RegisterUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Категории">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="категория" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="подкатегория" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ADSPR" Relationship="Self.FK_Объявления_Категории" FromRole="Категории" ToRole="ADSPR" />
+        </EntityType>
+        <EntityType Name="Продавцы">
+          <Key>
+            <PropertyRef Name="id_продавца" />
+          </Key>
+          <Property Name="id_продавца" Type="Int32" Nullable="false" />
+          <Property Name="регион" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ФИО" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="телефон" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="e_mail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="адрес_осмотра" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ADSPR" Relationship="Self.FK_Объявления_Продавцы" FromRole="Продавцы" ToRole="ADSPR" />
+        </EntityType>
+        <Association Name="FK_Объявления_Категории">
+          <End Role="Категории" Type="Self.Категории" Multiplicity="0..1" />
+          <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категории">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ADSPR">
+              <PropertyRef Name="id_категории" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Объявления_Продавцы">
+          <End Role="Продавцы" Type="Self.Продавцы" Multiplicity="0..1" />
+          <End Role="ADSPR" Type="Self.ADSPR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Продавцы">
+              <PropertyRef Name="id_продавца" />
+            </Principal>
+            <Dependent Role="ADSPR">
+              <PropertyRef Name="id_продавца" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ADSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADSPR" EntityType="Self.ADSPR" />
+          <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Категории" EntityType="Self.Категории" />
+          <EntitySet Name="Продавцы" EntityType="Self.Продавцы" />
+          <AssociationSet Name="FK_Объявления_Категории" Association="Self.FK_Объявления_Категории">
+            <End Role="Категории" EntitySet="Категории" />
+            <End Role="ADSPR" EntitySet="ADSPR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Объявления_Продавцы" Association="Self.FK_Объявления_Продавцы">
+            <End Role="Продавцы" EntitySet="Продавцы" />
+            <End Role="ADSPR" EntitySet="ADSPR" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ADSModelContainer" CdmEntityContainer="ADSEntities">
+          <EntitySetMapping Name="ADSPR">
+            <EntityTypeMapping TypeName="ADSModel.ADSPR">
+              <MappingFragment StoreEntitySet="ADSPR">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="дата_публикации" ColumnName="дата_публикации" />
+                <ScalarProperty Name="id_продавца" ColumnName="id_продавца" />
+                <ScalarProperty Name="id_категории" ColumnName="id_категории" />
+                <ScalarProperty Name="название_объявления" ColumnName="название_объявления" />
+                <ScalarProperty Name="стоимость_товара" ColumnName="стоимость_товара" />
+                <ScalarProperty Name="состояние_товара" ColumnName="состояние_товара" />
+                <ScalarProperty Name="описание" ColumnName="описание" />
+                <ScalarProperty Name="способ_оплаты" ColumnName="способ_оплаты" />
+                <ScalarProperty Name="способ_доставки" ColumnName="способ_доставки" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegisterUser">
+            <EntityTypeMapping TypeName="ADSModel.RegisterUser">
+              <MappingFragment StoreEntitySet="RegisterUser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ADSModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Категории">
+            <EntityTypeMapping TypeName="ADSModel.Категории">
+              <MappingFragment StoreEntitySet="Категории">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="категория" ColumnName="категория" />
+                <ScalarProperty Name="подкатегория" ColumnName="подкатегория" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Продавцы">
+            <EntityTypeMapping TypeName="ADSModel.Продавцы">
+              <MappingFragment StoreEntitySet="Продавцы">
+                <ScalarProperty Name="id_продавца" ColumnName="id_продавца" />
+                <ScalarProperty Name="регион" ColumnName="регион" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+                <ScalarProperty Name="адрес_осмотра" ColumnName="адрес_осмотра" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

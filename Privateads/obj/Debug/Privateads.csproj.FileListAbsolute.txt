@@ -1,0 +1,84 @@
+C:\Users\kopal\source\repos\Privateads\Privateads\bin\Debug\Privateads.exe.config
+C:\Users\kopal\source\repos\Privateads\Privateads\bin\Debug\Privateads.exe
+C:\Users\kopal\source\repos\Privateads\Privateads\bin\Debug\Privateads.pdb
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.csproj.AssemblyReference.cache
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.csproj.SuggestedBindingRedirects.cache
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\MainWindow.g.cs
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Window1.g.cs
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\App.g.cs
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.cache
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.lref
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\MainWindow.baml
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Window1.baml
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.g.resources
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.Form1.resources
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.Properties.Resources.resources
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.csproj.GenerateResource.cache
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.csproj.CoreCompileInputs.cache
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.exe
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.pdb
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Page3.g.cs
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Page3.baml
+C:\Users\kopal\source\repos\Privateads\Privateads\obj\Debug\Privateads.Form2.resources
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.csproj.AssemblyReference.cache
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\MainWindow.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Page3.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Window1.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\App.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.cache
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.lref
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.exe
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.pdb
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Privateads.exe.config
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Privateads.exe
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Privateads.pdb
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Microsoft.Azure.Management.Sql.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Hyak.Common.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\Microsoft.Azure.Common.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\MainWindow.baml
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Page3.baml
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Window1.baml
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.g.resources
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.Form1.resources
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.Form2.resources
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.Properties.Resources.resources
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.csproj.GenerateResource.cache
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.csproj.CoreCompileInputs.cache
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads.csproj.CopyComplete
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\EntityFramework.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\EntityFramework.xml
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\kopal\OneDrive\Рабочий стол\Privateads\Privateads\obj\Debug\Privateads_Content.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Privateads.exe.config
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Privateads.exe
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Privateads.pdb
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\EntityFramework.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Microsoft.Azure.Management.Sql.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Hyak.Common.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\Microsoft.Azure.Common.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\EntityFramework.xml
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.csproj.AssemblyReference.cache
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\MainWindow.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Page3.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Window1.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\App.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads_Content.g.cs
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.cache
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads_MarkupCompile.lref
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\MainWindow.baml
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Page3.baml
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Window1.baml
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.g.resources
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.Form1.resources
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.Form2.resources
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.Properties.Resources.resources
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.csproj.GenerateResource.cache
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.csproj.CoreCompileInputs.cache
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.csproj.CopyComplete
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.exe
+C:\Users\kopal\OneDrive\Рабочий стол\4пкс\Privateads\Privateads\obj\Debug\Privateads.pdb
